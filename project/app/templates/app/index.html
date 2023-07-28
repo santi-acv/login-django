@@ -1,0 +1,6 @@
+{% if request.user.is_authenticated %}¡Hola {{request.user.first_name}}!
+Usted se ha autenticado como el usuario {{request.user.username}}.
+Su última conexión fue en: {{request.user.last_login}}
+{% else %}¡Bienvenido!
+Esta es la página de inicio. Usted no se encuentra autenticado.
+{% endif %}
