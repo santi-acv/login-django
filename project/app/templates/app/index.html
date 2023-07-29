@@ -1,4 +1,4 @@
-{% if request.user.is_authenticated %}¡Hola {{request.user.first_name}}!
+{% if request.user.is_authenticated %}¡Hola mundo!
 Usted se ha autenticado como el usuario {{request.user.username}}.
 Su última conexión fue en: {{request.user.last_login}}
 {% else %}¡Bienvenido!
