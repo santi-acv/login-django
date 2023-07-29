@@ -29,7 +29,7 @@ sudo -u postgres psql < init_db.sql
 
 Para ejecutar el servidor, utilice los siguientes comandos.
 ```
-cd project
+source .venv/bin/activate
 gunicorn project.wsgi:application
 ```
 
