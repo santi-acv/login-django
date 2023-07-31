@@ -11,6 +11,10 @@ def index(request):
 
 def login(request):
 
+    # Verifica que se hayan enviado credenciales
+    if 'Authorization' not in request.headers:
+        return HttpResponse('No se recibieron credenciales.\n')
+
     # Extrae el nombre de ususario y la contraseña
     username, password = base64.b64decode(
         request.headers['Authorization'].split()[-1]
@@ -36,6 +40,10 @@ def logout(request):
 
 
 def register(request):
+
+    # Verifica que se hayan enviado credenciales
+    if 'Authorization' not in request.headers:
+        return HttpResponse('No se recibieron credenciales.\n')
 
     # Extrae el nombre de ususario y la contraseña
     username, password = base64.b64decode(
