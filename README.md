@@ -2,9 +2,9 @@
 
 ## Arquitectura
 
-El proyecto usa una arquitectura de 3 capas, las cuales consisten en>
+El proyecto usa una arquitectura de 3 capas, las cuales consisten en:
 
-1. Servidor HTTP Guniconr
+1. Servidor HTTP Gunicorn
 2. Framework back end Django
 3. Base de datos PostgreSQL
 
@@ -12,16 +12,17 @@ El proyecto usa una arquitectura de 3 capas, las cuales consisten en>
 
 * Python >= 3.8
 * PostgreSQL >= 12
+* Ubuntu >= 22.04 o equivalente
 
 ## Instalación
 
-En primer lugar, verifique que los siguientes paquetes se encuentren instalados.
+En primer lugar, verifique que las dependencias se encuentren actualizadas. El siguiente comando permite instalarlas en distribuciones basadas en Debian que utilizen el administrador de paquetes APT. Otras distribuciones deberán utilizar sus administradores de paquetes respectivos.
 
 ```
 sudo apt install python3-venv postgresql libpq-dev curl
 ```
 
-Luego, ejecute ambos comandos. El primero requiere permisos de administrador debido a que creará un usuario y una base de datos para el proyecto. El segundo creará un ambiente virtual con las dependencias necesarias.
+Luego, ejecute ambos comandos desde la carpeta del repositorio. El primero requiere permisos de administrador debido a que creará un usuario y una base de datos para el proyecto. El segundo creará un ambiente virtual con las dependencias necesarias.
 ```
 sudo -u postgres psql < init_db.sql
 ./setup.sh
