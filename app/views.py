@@ -18,7 +18,7 @@ def login(request):
     # Extrae el nombre de ususario y la contraseña
     username, password = base64.b64decode(
         request.headers['Authorization'].split()[-1]
-        ).decode("ascii").split(':')
+        ).decode("utf-8").split(':')
 
     # Determina si las credenciales son válidas
     user = auth.authenticate(request, username=username, password=password)
@@ -48,7 +48,7 @@ def register(request):
     # Extrae el nombre de ususario y la contraseña
     username, password = base64.b64decode(
         request.headers['Authorization'].split()[-1]
-        ).decode("ascii").split(':')
+        ).decode("utf-8").split(':')
 
     # Determina si el usuario ya existe
     user, created = User.objects.get_or_create(username=username)
