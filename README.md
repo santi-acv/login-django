@@ -17,12 +17,17 @@ El proyecto usa una arquitectura de 3 capas, las cuales consisten en:
 ## Instalación
 
 En primer lugar, verifique que las dependencias se encuentren actualizadas. El siguiente comando permite instalarlas en distribuciones basadas en Debian que utilizen el administrador de paquetes APT. Otras distribuciones deberán utilizar sus administradores de paquetes respectivos.
-
 ```
-sudo apt install python3-venv postgresql libpq-dev curl
+sudo apt install git python3-venv postgresql libpq-dev curl
 ```
 
-Luego, ejecute ambos comandos desde la carpeta del repositorio. El primero requiere permisos de administrador debido a que creará un usuario y una base de datos para el proyecto. El segundo creará un ambiente virtual con las dependencias necesarias.
+Luego, asegúrese de clonar el repositorio y ubicarse en la carpeta donde lo tiene descargado.
+```
+git clone https://github.com/santi-acv/login-django.git
+cd login-django
+```
+
+Después, ejecute ambos comandos desde esta carpeta. El primero requiere permisos de administrador debido a que creará un usuario y una base de datos para el proyecto. El segundo creará un ambiente virtual con las dependencias necesarias.
 ```
 sudo -u postgres psql < init_db.sql
 ./setup.sh
