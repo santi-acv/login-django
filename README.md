@@ -14,6 +14,8 @@ El proyecto usa una arquitectura de 3 capas, las cuales consisten en:
 * PostgreSQL >= 12
 * Ubuntu >= 22.04 o equivalente
 
+Observación: el sistema no funciona en Windows debido a que Gunicorn es incompatible con este sistema operativo. Debería ser posible montar el proyecto en macOS y distribuciones diferentes de Linux, pero este tutorial solo fue probado con la última versión LTS de Ubuntu.
+
 ## Instalación
 
 En primer lugar, verifique que las dependencias se encuentren actualizadas. El siguiente comando permite instalarlas en distribuciones basadas en Debian que utilizen el administrador de paquetes APT. Otras distribuciones deberán utilizar sus administradores de paquetes respectivos.
@@ -29,7 +31,7 @@ cd login-django
 
 Después, ejecute ambos comandos desde esta carpeta. El primero requiere permisos de administrador debido a que creará un usuario y una base de datos para el proyecto. El segundo creará un ambiente virtual con las dependencias necesarias.
 ```
-sudo -u postgres psql < init_db.sql
+sudo ./init_db.sh
 ./setup.sh
 ```
 
